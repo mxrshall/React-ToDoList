@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const App = () => {
 
-const [ulohy, setUlohy] = useState([])
+const [ulohy, setUlohy] = useState([]);
 
 const getData = (data) => {
   setUlohy([data, ...ulohy])
@@ -12,15 +12,15 @@ const getData = (data) => {
 
 useEffect(() => {
   const data = localStorage.getItem("Ulohy")
-  if(data){
+  if(data===null){
     setUlohy([JSON.parse(data)])  
   }
-}, [])
+}, []);
 
 useEffect(() => {
-localStorage.setItem("Ulohy", JSON.stringify(ulohy))
+  localStorage.setItem("Ulohy", JSON.stringify(ulohy));
 
-}, [ulohy])
+}, [ulohy]);
 
   return (
     <div className="App">
