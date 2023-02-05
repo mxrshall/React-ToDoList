@@ -11,7 +11,7 @@ const pridat = (e) => {
 }
 
   return (
-    <div className="todo">T
+    <div className="todo">
         <form onSubmit={pridat}>
             <input type="text" placeholder="Zadaj ulohu" value={uloha} onChange={(e) => setUloha(e.target.value)}></input>
             <button>Pridat</button>
